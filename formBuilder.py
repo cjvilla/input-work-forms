@@ -11,14 +11,12 @@ layout = [
     [sg.Text('Name', size=(15,1)), sg.InputText(key='Name')],
     [sg.Text('City', size=(15,1)), sg.InputText(key='City')],
     [sg.Text('Favorite Colour', size=(15,1)), sg.Combo(['Green', 'Blue', 'Red'], key='Favorite Colour')],
-    [sg.Text('I speak', size=(15,1)),
-                            sg.Checkbox('German', key='German'),
-                            sg.Checkbox('Spanish', key='Spanish'),
-                            sg.Checkbox('English', key='English')],
+    [sg.Text('I speak', size=(15,1)),sg.Combo(['Korean', 'Chinese', 'English'], key='I speak')],
     [sg.Text('No. of Children', size=(15,1)), sg.Spin([i for i in range(0,16)],
                                                        initial_value=0, key='Children')],
     [sg.Submit(), sg.Button('Clear'), sg.Exit()]
 ]
+
 window = sg.Window('Simple data entry form', layout)
 
 def clear_input():
