@@ -21,12 +21,20 @@ layout = [
 ]
 window = sg.Window('Simple data entry form', layout)
 
+def clear_input():
+    for key in values:
+        window[key]('')
+    return None
+
 while True:
     event, values = window.read()
     if event == sg.WIN_CLOSED or event == 'Exit':
         break
+    if event == 'Clear':
+        clear_input()
     if event == 'Submit':
         df = df.append(values, ignore_index=True)
         df.to_excel(EXCEL_FILE, index=False)
         sg.popup('Data Saved')
+        clear_input()
 window.close()
