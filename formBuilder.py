@@ -26,5 +26,7 @@ while True:
     if event == sg.WIN_CLOSED or event == 'Exit':
         break
     if event == 'Submit':
-        print(event, values)
+        df = df.append(values, ignore_index=True)
+        df.to_excel(EXCEL_FILE, index=False)
+        sg.popup('Data Saved')
 window.close()
