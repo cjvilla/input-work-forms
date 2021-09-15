@@ -5,5 +5,5 @@ Very simple project of inputting surgical data into an excel sheet using PySimpl
 <ul>
   <li> pip install openpyxl</li>
   <li> pip install pyinstaller</li>
-  <li> pip install pyinstaller</li>
+  <li> pip install PySimpleGUI</li>
 </ul>
